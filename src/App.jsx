@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import TodoCreate from "./components/TodoCreate";
-import TodoList from "./components/Todolist";
+
+import TodoList from "./components/TodoList";
 import TodoComputed from "./components/TodoComputed";
 import TodoFilter from "./components/TodoFilter";
 import { useState } from "react";
