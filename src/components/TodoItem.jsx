@@ -1,11 +1,19 @@
 import IconCross from "./icons/IconCross";
 import IconCheck from "./icons/IconCheck";
+import React from "react";
 
-const TodoItem = ({ todo, removeTodo, updateTodo }) => {
+const TodoItem = React.forwardRef(function lautaro(
+  { todo, removeTodo, updateTodo, ...props },
+  ref
+) {
   const { title, id, completed } = todo;
 
   return (
-    <article className=" flex gap-4 border-b border-b-gray-400 px-4 py-4 transition-all duration-1000 dark:bg-gray-800">
+    <article
+      {...props}
+      ref={ref}
+      className=" flex gap-4 border-b border-b-gray-400 px-4 py-4 transition-all duration-1000 dark:bg-gray-800"
+    >
       <button
         className={`${
           completed
@@ -28,6 +36,6 @@ const TodoItem = ({ todo, removeTodo, updateTodo }) => {
       </button>
     </article>
   );
-};
+});
 
 export default TodoItem;
